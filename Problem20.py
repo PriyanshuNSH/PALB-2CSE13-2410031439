@@ -1,5 +1,5 @@
 def row_with_max_ones(arr):
-    if not arr:
+    if not arr or not arr[0]:
         return -1
     
     n = len(arr)
