@@ -1,10 +1,18 @@
 nums = [1, 3, 5, 6]
 target = 5
 
-index = len(nums)
-for i in range(len(nums)):
-    if nums[i] >= target:
-        index = i
-        break
+left = 0
+right = len(nums) - 1
 
-print("Index =", index)
+while left <= right:
+    mid = (left + right) // 2
+    
+    if nums[mid] == target:
+        print("Index =", mid)
+        break
+    elif nums[mid] < target:
+        left = mid + 1
+    else:
+        right = mid - 1
+else:
+    print("Index =", left)
